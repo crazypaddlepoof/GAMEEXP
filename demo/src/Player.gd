@@ -49,33 +49,6 @@ func get_camera_relative_input() -> Vector3:
 		input_dir -= %Camera3D.global_transform.basis.z
 	if Input.is_key_pressed(KEY_S): # Backward
 		input_dir += %Camera3D.global_transform.basis.z
-	if Input.is_key_pressed(KEY_E) or Input.is_key_pressed(KEY_SPACE): # Up
-		velocity.y += JUMP_SPEED + MOVE_SPEED*.016
-	if Input.is_key_pressed(KEY_Q): # Down
-		velocity.y -= JUMP_SPEED + MOVE_SPEED*.016
-	if Input.is_key_pressed(KEY_KP_ADD) or Input.is_key_pressed(KEY_EQUAL):
-		MOVE_SPEED = clamp(MOVE_SPEED + .5, 5, 9999)
-	if Input.is_key_pressed(KEY_KP_SUBTRACT) or Input.is_key_pressed(KEY_MINUS):
-		MOVE_SPEED = clamp(MOVE_SPEED - .5, 5, 9999)
+	if Input.is_action_just_pressed("jump"): # Spacebar
+		velocity.y += JUMP_SPEED
 	return input_dir		
-
-
-func _input(p_event: InputEvent) -> void:
-	if p_event is InputEventMouseButton and p_event.pressed:
-		if p_event.button_index == MOUSE_BUTTON_WHEEL_UP:
-			MOVE_SPEED = clamp(MOVE_SPEED + 5, 5, 9999)
-		elif p_event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-			MOVE_SPEED = clamp(MOVE_SPEED - 5, 5, 9999)
-	
-	elif p_event is InputEventKey:
-		if p_event.pressed:
-			if p_event.keycode == KEY_V:
-				first_person = ! first_person
-			elif p_event.keycode == KEY_G:
-				gravity_enabled = ! gravity_enabled
-			elif p_event.keycode == KEY_C:
-				collision_enabled = ! collision_enabled
-
-		# Else if up/down released
-		elif p_event.keycode in [ KEY_Q, KEY_E, KEY_SPACE ]:
-			velocity.y = 0
