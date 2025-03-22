@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+@onready var actionable_finder: Area3D = $CollisionShapeBody/Area3D
+
 @export var MOVE_SPEED: float = 50.0
 @export var JUMP_SPEED: float = 2.0
 @export var first_person: bool = false : 
@@ -52,3 +54,11 @@ func get_camera_relative_input() -> Vector3:
 	if Input.is_action_just_pressed("jump"): # Spacebar
 		velocity.y += JUMP_SPEED
 	return input_dir		
+	
+	
+func _unhandled_input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Interact"):
+		var actionables = actionable_finder.get_overlapping_areas()
+		if actionables.size() > 0:
+			actionables[0].action()
+			return

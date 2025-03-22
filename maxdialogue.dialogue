@@ -1,0 +1,10 @@
+~ start
+Max: Hey, I'm Max. I just caught this fish.
+Max: I am honestly indifferent to the cat in this level.
+Max: I like Nicholas Jackson though. He scores a lot of goals.
+Who do you prefer?
+- Nicholas Jackson
+	Max: Good Choice! I love Chelsea F.C
+- Apple Cat
+	Max: eh I guess thats fair
+=> END

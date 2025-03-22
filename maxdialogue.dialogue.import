@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cx256c8popk5r"
+path="res://.godot/imported/maxdialogue.dialogue-a66e669d934ece11a4a94f5653f77805.tres"
+
+[deps]
+
+source_file="res://maxdialogue.dialogue"
+dest_files=["res://.godot/imported/maxdialogue.dialogue-a66e669d934ece11a4a94f5653f77805.tres"]
+
+[params]
+
+defaults=true

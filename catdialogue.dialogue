@@ -1,0 +1,8 @@
+~ start
+AppleCat: Hello I'm Apple Cat
+AppleCat: Would you like an Apple?
+- Yes!!!!
+	AppleCat: Yippie! Enjoy your apple!
+- Heck NO!
+	AppleCat: :(
+- End the conversation => END

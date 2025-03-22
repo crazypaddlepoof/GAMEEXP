@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://domhm87hbhbg1"]
+[gd_scene load_steps=8 format=3 uid="uid://domhm87hbhbg1"]
 
-[ext_resource type="Script" path="res://demo/src/Player.gd" id="1_nm1yx"]
-[ext_resource type="Script" path="res://demo/src/CameraManager.gd" id="2_loos7"]
+[ext_resource type="Script" uid="uid://cbqq5elp4ye77" path="res://demo/src/Player.gd" id="1_nm1yx"]
+[ext_resource type="Script" uid="uid://k00c7ks1twyj" path="res://demo/src/CameraManager.gd" id="2_loos7"]
 [ext_resource type="ArrayMesh" uid="uid://ch0wmx4g71246" path="res://addons/Third Person Controller/Assets/Models/Characters/POAndy.obj" id="3_1ib21"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_smq6u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwhhq"]
 height = 1.5
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgnwv"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_twc2s"]
 
@@ -33,6 +35,14 @@ far = 16384.0
 [node name="CollisionShapeBody" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25, 0)
 shape = SubResource("CapsuleShape3D_lwhhq")
+
+[node name="Area3D" type="Area3D" parent="CollisionShapeBody"]
+collision_layer = 17
+collision_mask = 17
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CollisionShapeBody/Area3D"]
+transform = Transform3D(3.666, 0, 0, 0, 2.65985, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_sgnwv")
 
 [node name="CollisionShapeRay" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0)
