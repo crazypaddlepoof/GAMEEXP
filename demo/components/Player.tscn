@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://domhm87hbhbg1"]
+[gd_scene load_steps=10 format=3 uid="uid://domhm87hbhbg1"]
 
-[ext_resource type="Script" uid="uid://cbqq5elp4ye77" path="res://demo/src/Player.gd" id="1_nm1yx"]
-[ext_resource type="Script" uid="uid://k00c7ks1twyj" path="res://demo/src/CameraManager.gd" id="2_loos7"]
-[ext_resource type="ArrayMesh" uid="uid://ch0wmx4g71246" path="res://addons/Third Person Controller/Assets/Models/Characters/POAndy.obj" id="3_1ib21"]
+[ext_resource type="Script" path="res://demo/src/Player.gd" id="1_nm1yx"]
+[ext_resource type="Script" path="res://demo/src/CameraManager.gd" id="2_loos7"]
+[ext_resource type="Texture2D" uid="uid://c1x355dlcqnm2" path="res://addons/Third Person Controller/Assets/Models/Characters/dingus_nowhiskers.jpg" id="3_2bwb4"]
+[ext_resource type="ArrayMesh" uid="uid://rhwg3lm77fmq" path="res://addons/Third Person Controller/Assets/Models/Characters/maxwell.obj" id="3_s6ocl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_smq6u"]
 
@@ -12,6 +13,9 @@ height = 1.5
 [sub_resource type="BoxShape3D" id="BoxShape3D_sgnwv"]
 
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_twc2s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhlvp"]
+albedo_texture = ExtResource("3_2bwb4")
 
 [node name="Player" type="CharacterBody3D"]
 collision_layer = 2
@@ -49,5 +53,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 
 shape = SubResource("SeparationRayShape3D_twc2s")
 
 [node name="Body" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0864, 0)
-mesh = ExtResource("3_1ib21")
+transform = Transform3D(0.000270348, 0, -0.00127924, 0, 0.00130749, 0, 0.00127924, 0, 0.000270348, 0, 0.0597401, 0)
+material_override = SubResource("StandardMaterial3D_fhlvp")
+mesh = ExtResource("3_s6ocl")

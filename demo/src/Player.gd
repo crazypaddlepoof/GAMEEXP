@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 @onready var actionable_finder: Area3D = $CollisionShapeBody/Area3D
+@onready var jump_sfx: AudioStreamPlayer2D = $"../Jump SFX"
+
 
 @export var MOVE_SPEED: float = 50.0
 @export var JUMP_SPEED: float = 2.0
@@ -53,6 +55,7 @@ func get_camera_relative_input() -> Vector3:
 		input_dir += %Camera3D.global_transform.basis.z
 	if Input.is_action_just_pressed("jump"): # Spacebar
 		velocity.y += JUMP_SPEED
+		jump_sfx.play()
 	return input_dir		
 	
 	

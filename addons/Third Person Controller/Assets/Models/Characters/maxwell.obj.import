@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rhwg3lm77fmq"
+path="res://.godot/imported/maxwell.obj-69b04c53cae47e27504ac9e88b12e2de.mesh"
+
+[deps]
+
+files=["res://.godot/imported/maxwell.obj-69b04c53cae47e27504ac9e88b12e2de.mesh"]
+
+source_file="res://addons/Third Person Controller/Assets/Models/Characters/maxwell.obj"
+dest_files=["res://.godot/imported/maxwell.obj-69b04c53cae47e27504ac9e88b12e2de.mesh", "res://.godot/imported/maxwell.obj-69b04c53cae47e27504ac9e88b12e2de.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
